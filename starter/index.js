@@ -121,27 +121,30 @@ console.log("The average of the changes in Profit/Losses is: " + averageChange);
 
 
 // The greatest increase in profits (date and amount) over the entire period.
-var greatestProfit = finances[0][1]; // Initialise variable to the first month's profit/loss
-var greatestProfitMonth = finances[0][0]; // Initialise variable to the first month's date
-
-for (var i = 1; i < finances.length; i++) { // Starting from the second month
-    if (finances[i][1] > greatestProfit) { // Compare current month's profit/loss to the greatestProfit
-        greatestProfit = finances[i][1]; // If it's greater, update the greatestProfit
-        greatestProfitMonth = finances[i][0]; // Update the month's date
+// I previously made the mistake of finding the greatest increase by comparing the months, instead of the whole period.
+// (I've rectified it now, along with the greatest decrease)
+var greatestIncrease = finances[0][1];
+var greatestIncreaseMonth = finances[0][0];
+for (var i = 1; i < finances.length; i++) {
+    var currentChange = finances[i][1] - finances[i - 1][1];
+    if (currentChange > greatestIncrease) {
+        greatestIncrease = currentChange;
+        greatestIncreaseMonth = finances[i][0];
     }
 }
-console.log("The greatest increase in profits is: $" + greatestProfit + " on " + greatestProfitMonth);
+console.log("The greatest increase in profits is: $" + greatestIncrease + " on " + greatestIncreaseMonth);
 
 
 // The greatest decrease in losses (date and amount) over the entire period.
-var greatestLoss = finances[0][1];
-var greatestLossMonth = finances[0][0];
+var greatestDecrease = finances[0][1];
+var greatestDecreaseMonth = finances[0][0];
 for (var i = 1; i < finances.length; i++) {
-    if (finances[i][1] < greatestLoss) {
-        greatestLoss = finances[i][1];
-        greatestLossMonth = finances[i][0];
+    var currentChange = finances[i][1] - finances[i - 1][1];
+    if (currentChange < greatestDecrease) {
+        greatestDecrease = currentChange;
+        greatestDecreaseMonth = finances[i][0];
     }
 }
-console.log("The greatest decrease in losses is: $" + greatestLoss + " on " + greatestLossMonth);
+console.log("The greatest decrease in losses is: $" + greatestDecrease + " on " + greatestDecreaseMonth);
 
 
