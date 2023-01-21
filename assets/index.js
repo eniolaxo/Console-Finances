@@ -147,4 +147,3 @@ for (var i = 1; i < finances.length; i++) {
 }
 console.log("The greatest decrease in losses is: $" + greatestDecrease + " on " + greatestDecreaseMonth);
 
-
