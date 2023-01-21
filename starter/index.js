@@ -94,10 +94,13 @@ var finances = [
 console.log('The total of months is: ' + finances.length);
 
 // The net total amount of Profit/Losses over the entire period.
+// I made the variable of the netTotal assigned to '0' so that it can count everything from the beginning. 
+// I'm using a for loop as it allows me to repeat a block of code multiple times without me doing it manually.
 var netTotal = 0;
 for (var i = 0; i < finances.length; i++) {
   netTotal += finances[i][1];
 }
+console.log("The total amount is $" + netTotal);
 
 // The average of the changes in Profit/Losses over the entire period.
 
