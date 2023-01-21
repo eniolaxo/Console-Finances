@@ -119,5 +119,11 @@ var averageChange = totalChange / (finances.length - 1);
 
 
 // The greatest increase in profits (date and amount) over the entire period.
+var greatestProfit = finances[0][1]; // Initialise variable to the first month's profit/loss
+var greatestProfitMonth = finances[0][0]; // Initialise variable to the first month's date
+
+
 
 // The greatest decrease in losses (date and amount) over the entire period.
+
+
