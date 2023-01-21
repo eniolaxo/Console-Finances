@@ -87,6 +87,10 @@ var finances = [
 ['Feb-2017', 671099]
 ];
 
+//intro:
+console.log ("Eniola Adebayo's Financial Analysis:");
+
+
 // calculate each of the following:
 
 // The total number of months included in the dataset
