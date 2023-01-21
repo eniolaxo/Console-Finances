@@ -88,7 +88,7 @@ var finances = [
 ];
 
 //intro:
-console.log ("Eniola Adebayo's Financial Analysis:");
+console.log ("Financial Analysis:");
 
 
 // calculate each of the following:
