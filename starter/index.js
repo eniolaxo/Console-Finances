@@ -103,9 +103,16 @@ for (var i = 0; i < finances.length; i++) {
 console.log("The total amount is $" + netTotal);
 
 // The average of the changes in Profit/Losses over the entire period.
-
 // You will need to track what the total change in profits are from month to month and then find the average.
 // (Total/Number of months)
+// Created the variable totalChange to keep track of the total change in profits from month to month.
+// After the loop, I divided the totalChange by the no. of months - 1 to find the avg month (since i started from 2nd element)
+var totalChange = 0;
+for (var i = 1; i < finances.length; i++) {
+    totalChange += finances[i][1] - finances[i - 1][1];
+}
+var averageChange = totalChange / (finances.length - 1);
+
 
 // The greatest increase in profits (date and amount) over the entire period.
 
