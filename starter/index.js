@@ -89,7 +89,7 @@ var finances = [
 
 //intro:
 console.log ("Financial Analysis:");
-
+console.log('-------------------------------');
 
 // calculate each of the following:
 
@@ -122,6 +122,13 @@ var averageChange = totalChange / (finances.length - 1);
 var greatestProfit = finances[0][1]; // Initialise variable to the first month's profit/loss
 var greatestProfitMonth = finances[0][0]; // Initialise variable to the first month's date
 
+for (var i = 1; i < finances.length; i++) { // Starting from the second month
+    if (finances[i][1] > greatestProfit) { // Compare current month's profit/loss to the greatestProfit
+        greatestProfit = finances[i][1]; // If it's greater, update the greatestProfit
+        greatestProfitMonth = finances[i][0]; // Update the month's date
+    }
+}
+console.log("The greatest increase in profits is: $" + greatestProfit + " on " + greatestProfitMonth);
 
 
 // The greatest decrease in losses (date and amount) over the entire period.
